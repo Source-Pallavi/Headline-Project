@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,11 @@ using System.Threading.Tasks;
 namespace TestProject
 {
     public class Class1
-    {    IWebDriver driver;
+    {    
     [Test]
         public void TestNews()
         {
+            IWebDriver driver = new FirefoxDriver();
             try
             {
                 driver.Url = "https://news.ycombinator.com/";
