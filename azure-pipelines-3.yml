@@ -30,15 +30,9 @@ steps:
 
 - task: VSTest@2
   inputs:
-    testSelector: 'testAssemblies'
     testAssemblyVer2: |
-      **\*test*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
-    runOnlyImpactedTests: false
-    uiTests: true
-    vsTestVersion: 'toolsInstaller'
+     *\$(BuildConfiguration)\*test.dll
+     !*\obj\*
     codeCoverageEnabled: true
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
